@@ -16,9 +16,20 @@ class MyApp extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.only(top: 80.0, left: 10.0, right: 10.0),
           child: Slidable(
-            leftPosition: -12,
-            // Specify a key if the Slidable is dismissible.
+            leftPosition: -20,
+            rightPosition: -20,
             key: const ValueKey(0),
+            startActionPane: ActionPane(
+              motion: ScrollMotion(),
+              children: [
+                SlidableAction(
+                  onPressed: doNothing,
+                  backgroundColor: Color(0xFF7BC043),
+                  foregroundColor: Colors.white,
+                  label: 'Archive',
+                ),
+              ],
+            ),
             endActionPane: ActionPane(
               motion: ScrollMotion(),
               children: [
